@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: rgb(183, 2, 255);
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: center;
+}
+
+.container {
+    background: rgb(255, 139, 197);
+    margin: 30px;
+    padding: 30px;
+    border-radius: 25px;
+
+}
+
+.title {
+    text-align: center;
+}
+
+.title span {
+    color: khaki;
+}
+
+.status-action {
+    display: flex;
+    color: dimgrey;
+    margin-top: 25px;
+    font-size: 25px;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.status span {
+    color: khaki;
+}
+
+.reset {
+    cursor: pointer;
+}
+
+.reset:hover {
+    color: gainsboro;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 15px;
+    margin-top: 15px;
+    background: rgb(146, 44, 225);
+
+}
+
+.game-cell {
+    height: 150px;
+    width: 150px;
+    background: rgb(255, 139, 197);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.x,
+.o {
+    cursor: default;
+}
+
+.x::after {
+    content:'✖';
+    font-size: 130px;
+    color: rgb(16, 216, 216);
+}
+
+.o::after {
+    content: '〇';
+    font-size: 130px;
+    color: khaki;
+
+}
+
+.won::after {
+    color: red;
+}
+
+.status {
+    color: rgb(0, 219, 219);
+}
+
+.status div{
+    color: rgb(212, 23, 23);
+}
+
+@media only screen and (max-width: 1024px) {
+    .game-grid {
+      margin-top: 25px;
+      grid-gap: 10px;
+    }
+  
+    .game-cell {
+      height: 150px;
+      width: 150px;
+    }
+  
+    .x::after {
+      font-size: 140px;
+    }
+  
+    .o::after {
+      font-size: 140px;
+    }
+  }
+  
+  @media only screen and (max-width: 540px) {
+    .container {
+      margin: 25px;
+      padding: 25px;
+    }
+  
+    .game-cell {
+      height: 85px;
+      width: 85px;
+    }
+  
+    .x::after {
+      font-size: 75px;
+    }
+  
+    .o::after {
+      font-size: 75px;
+    }
+  }
